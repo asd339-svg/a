@@ -42,20 +42,71 @@
     { name:"腾讯视频", abbr:"视", color:"#FF5B33", desc:"追剧看番，热门影视全在这", url:"https://v.qq.com" }
   ];
 
-  var VIDEO_LINKS = [
-    { name:"爱奇艺", abbr:"爱", color:"#00BE06", desc:"热播剧、院线大片全都有",   url:"https://www.iqiyi.com" },
-    { name:"优酷",   abbr:"优", color:"#00A7E1", desc:"电视剧电影综艺，追不停",   url:"https://www.youku.com" },
-    { name:"芒果TV", abbr:"芒", color:"#FF6B35", desc:"综艺王牌，剧集也好追",     url:"https://www.mgtv.com" },
-    { name:"咪咕视频", abbr:"咪", color:"#E60012", desc:"影视加体育，都好看",     url:"https://www.miguvideo.com" },
-    { name:"西瓜视频", abbr:"瓜", color:"#FF5A00", desc:"免费影视，边看边聊",     url:"https://www.ixigua.com" },
-    { name:"搜狐视频", abbr:"狐", color:"#E9B13B", desc:"经典老剧，慢慢追",       url:"https://tv.sohu.com" },
-    { name:"乐视视频", abbr:"乐", color:"#E52127", desc:"老牌影视库，怀旧好去处", url:"https://www.le.com" },
-    { name:"1905电影网", abbr:"影", color:"#8E44AD", desc:"海量老电影，免费看",   url:"https://www.1905.com" },
-    { name:"华数TV", abbr:"华", color:"#FFB800", desc:"电视直播加点播，全家看",   url:"https://www.wasu.cn" },
-    { name:"风行网", abbr:"风", color:"#00A0E9", desc:"老牌视频站，剧集不少",     url:"https://www.fun.tv" }
+  var GO_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg>';
+
+  /* ---------- 在线影院数据 ---------- */
+  var MOVIES = [
+    { name:"大闹天宫", tag:"动画电影", info:"1961 · 经典之作 · 112分钟", color:"#F5B041", src:"https://player.bilibili.com/player.html?bvid=BV1iY4y1Z7pJ&page=1&high_quality=1&danmaku=0" },
+    { name:"哪吒闹海", tag:"动画电影", info:"1979 · 上美经典 · 65分钟", color:"#5DADE2", src:"https://player.bilibili.com/player.html?aid=2434608&cid=3684318&high_quality=1&danmaku=0" },
+    { name:"葫芦兄弟", tag:"经典剧集", info:"13集 · 剪纸动画", color:"#58D68D", src:"https://player.bilibili.com/player.html?aid=2425770&cid=3684209&high_quality=1&danmaku=0" },
+    { name:"黑猫警长", tag:"经典剧集", info:"5集 · 国产动画", color:"#AF7AC5", src:"https://player.bilibili.com/player.html?aid=2435223&cid=3682973&high_quality=1&danmaku=0" },
+    { name:"舒克和贝塔", tag:"经典剧集", info:"13集 · 开飞机的小老鼠", color:"#48C9B0", src:"https://player.bilibili.com/player.html?bvid=BV1ZG411s7qB&page=1&high_quality=1&danmaku=0" },
+    { name:"邋遢大王奇遇记", tag:"经典剧集", info:"13集 · 地下冒险记", color:"#EC7063", src:"https://player.bilibili.com/player.html?bvid=BV1xG411x7XD&page=1&high_quality=1&danmaku=0" },
+    { name:"阿凡提的故事", tag:"经典剧集", info:"14集 · 木偶动画", color:"#A569BD", src:"https://player.bilibili.com/player.html?bvid=BV19f4y1o7cb&page=1&high_quality=1&danmaku=0" },
+    { name:"雪孩子", tag:"动画短片", info:"1980 · 温暖催泪", color:"#85C1E9", src:"https://player.bilibili.com/player.html?bvid=BV1dV411T7B4&page=1&high_quality=1&danmaku=0" },
+    { name:"三个和尚", tag:"动画短片", info:"1981 · 无台词神作", color:"#F7DC6F", src:"https://player.bilibili.com/player.html?bvid=BV1GdTTzCEDD&page=1&high_quality=1&danmaku=0" },
+    { name:"九色鹿", tag:"动画短片", info:"1981 · 敦煌壁画风", color:"#48C9B0", src:"https://player.bilibili.com/player.html?bvid=BV1k7Gt6mEKV&page=1&high_quality=1&danmaku=0" },
+    { name:"猴子捞月", tag:"动画短片", info:"1981 · 剪纸动画", color:"#E59866", src:"https://player.bilibili.com/player.html?bvid=BV1697362EKr&page=1&high_quality=1&danmaku=0" },
+    { name:"如果国宝会说话", tag:"纪录片", info:"央视出品 · 25集", color:"#E67E22", src:"https://player.bilibili.com/player.html?aid=17987588&cid=30028094&high_quality=1&danmaku=0" }
   ];
 
-  var GO_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg>';
+  var PLAY_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>';
+
+  function renderMovies(){
+    var wrap = document.getElementById("movie-grid");
+    if(!wrap) return;
+    var html = "";
+    for(var i = 0; i < MOVIES.length; i++){
+      var m = MOVIES[i];
+      html +=
+        '<button type="button" class="movie-card reveal" data-src="' + m.src + '" style="--movie-color:' + m.color + '">' +
+          '<span class="movie-tag">' + m.tag + '</span>' +
+          '<span class="movie-name">' + m.name + '</span>' +
+          '<span class="movie-info">' + m.info + '</span>' +
+          '<span class="movie-play">' + PLAY_ICON + '<b>点开就看</b></span>' +
+        '</button>';
+    }
+    wrap.innerHTML = html;
+  }
+  renderMovies();
+
+  /* ---------- 播放器弹层 ---------- */
+  var mask = document.getElementById("player-mask");
+  var iframe = document.getElementById("player-iframe");
+  var ptitle = document.getElementById("player-title");
+  function openPlayer(card){
+    var src = card.getAttribute("data-src");
+    if(!src) return;
+    var nm = card.querySelector(".movie-name");
+    ptitle.textContent = nm ? nm.textContent : "";
+    iframe.src = src;
+    mask.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+  function closePlayer(){
+    iframe.src = "";
+    mask.hidden = true;
+    document.body.style.overflow = "";
+  }
+  document.addEventListener("click", function(e){
+    var card = e.target.closest ? e.target.closest(".movie-card") : null;
+    if(card){ openPlayer(card); return; }
+    if(e.target.closest && e.target.closest("#player-close")){ closePlayer(); return; }
+    if(e.target === mask){ closePlayer(); }
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && mask && !mask.hidden){ closePlayer(); }
+  });
 
   function renderLinks(containerId, list){
     var wrap = document.getElementById(containerId);
@@ -77,7 +128,6 @@
   renderLinks("social-grid", SOCIAL_LINKS);
   renderLinks("game-grid", GAME_LINKS);
   renderLinks("tool-grid", TOOL_LINKS);
-  renderLinks("video-grid", VIDEO_LINKS);
 
   var socialCount = document.getElementById("social-count");
   if(socialCount) socialCount.textContent = SOCIAL_LINKS.length + " 款";
@@ -85,8 +135,6 @@
   if(gameCount) gameCount.textContent = GAME_LINKS.length + " 款";
   var toolCount = document.getElementById("tool-count");
   if(toolCount) toolCount.textContent = TOOL_LINKS.length + " 款";
-  var videoCount = document.getElementById("video-count");
-  if(videoCount) videoCount.textContent = VIDEO_LINKS.length + " 款";
 
   /* ---------- 星星粒子 ---------- */
   var field = document.getElementById("star-field");

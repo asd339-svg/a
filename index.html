@@ -24,6 +24,7 @@
   <ul class="nav-links">
     <li><a href="#welcome">首页</a></li>
     <li><a href="#download">下载中心</a></li>
+    <li><a href="#cinema">在线影院</a></li>
     <li><a href="#inside">里面有什么</a></li>
     <li><a href="#note">寄语</a></li>
   </ul>
@@ -84,7 +85,7 @@
         <path d="M12 2 2 7l10 5 10-5-10-5z"></path>
         <path d="m2 17 10 5 10-5"></path><path d="m2 12 10 5 10-5"></path>
       </svg>
-      下载中心 <strong>40 款应用</strong>
+      下载中心 <strong>30 款应用</strong>
     </span>
     <span class="ribbon-item">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -101,7 +102,7 @@
     <div class="sec-head reveal">
       <span class="sec-kicker">Download Center</span>
       <h2>下载中心</h2>
-      <p>各种社交软件、热门游戏、实用工具和追剧平台，点一下就跳转到官方页面。全部来自官网，放心点。</p>
+      <p>各种社交软件、热门游戏和实用工具，点一下就跳转到官方下载页面。全部来自官网，放心点。</p>
     </div>
     <div class="dl-groups">
       <div class="reveal">
@@ -116,11 +117,19 @@
         <div class="dl-group-title">实用工具<span class="count" id="tool-count"></span></div>
         <div class="dl-grid" id="tool-grid"></div>
       </div>
-      <div class="reveal">
-        <div class="dl-group-title">追剧观影<span class="count" id="video-count"></span></div>
-        <div class="dl-grid" id="video-grid"></div>
-      </div>
     </div>
+  </div>
+</section>
+
+<!-- ===== 在线影院 ===== -->
+<section class="section" id="cinema">
+  <div class="section-inner">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Online Cinema</span>
+      <h2>在线影院</h2>
+      <p>经典动画、剧集和纪录片，点开就能在站内直接看，不用跳走。片单会不断添加。</p>
+    </div>
+    <div class="movie-grid" id="movie-grid"></div>
   </div>
 </section>
 
@@ -192,11 +201,25 @@
   <ul class="foot-links">
     <li><a href="#welcome">首页</a></li>
     <li><a href="#download">下载中心</a></li>
+    <li><a href="#cinema">在线影院</a></li>
     <li><a href="#inside">里面有什么</a></li>
     <li><a href="#note">寄语</a></li>
   </ul>
   <p>© 2026 我的小站 · 欢迎光临</p>
 </footer>
+
+<!-- ===== 播放器弹层 ===== -->
+<div class="player-mask" id="player-mask" hidden>
+  <div class="player-box">
+    <div class="player-bar">
+      <span class="player-title" id="player-title"></span>
+      <button type="button" class="player-close" id="player-close" aria-label="关闭播放器">✕</button>
+    </div>
+    <div class="player-frame">
+      <iframe id="player-iframe" src="" allow="autoplay; fullscreen; encrypted-media" allowfullscreen scrolling="no" frameborder="0"></iframe>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
