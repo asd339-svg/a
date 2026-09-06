@@ -46,18 +46,22 @@
 
   /* ---------- 在线影院数据 ---------- */
   var MOVIES = [
-    { name:"大闹天宫", tag:"动画电影", info:"1961 · 经典之作 · 112分钟", color:"#F5B041", src:"https://player.bilibili.com/player.html?bvid=BV1iY4y1Z7pJ&page=1&high_quality=1&danmaku=0" },
-    { name:"哪吒闹海", tag:"动画电影", info:"1979 · 上美经典 · 65分钟", color:"#5DADE2", src:"https://player.bilibili.com/player.html?aid=2434608&cid=3684318&high_quality=1&danmaku=0" },
-    { name:"葫芦兄弟", tag:"经典剧集", info:"13集 · 剪纸动画", color:"#58D68D", src:"https://player.bilibili.com/player.html?aid=2425770&cid=3684209&high_quality=1&danmaku=0" },
-    { name:"黑猫警长", tag:"经典剧集", info:"5集 · 国产动画", color:"#AF7AC5", src:"https://player.bilibili.com/player.html?aid=2435223&cid=3682973&high_quality=1&danmaku=0" },
-    { name:"舒克和贝塔", tag:"经典剧集", info:"13集 · 开飞机的小老鼠", color:"#48C9B0", src:"https://player.bilibili.com/player.html?bvid=BV1ZG411s7qB&page=1&high_quality=1&danmaku=0" },
-    { name:"邋遢大王奇遇记", tag:"经典剧集", info:"13集 · 地下冒险记", color:"#EC7063", src:"https://player.bilibili.com/player.html?bvid=BV1xG411x7XD&page=1&high_quality=1&danmaku=0" },
-    { name:"阿凡提的故事", tag:"经典剧集", info:"14集 · 木偶动画", color:"#A569BD", src:"https://player.bilibili.com/player.html?bvid=BV19f4y1o7cb&page=1&high_quality=1&danmaku=0" },
-    { name:"雪孩子", tag:"动画短片", info:"1980 · 温暖催泪", color:"#85C1E9", src:"https://player.bilibili.com/player.html?bvid=BV1dV411T7B4&page=1&high_quality=1&danmaku=0" },
-    { name:"三个和尚", tag:"动画短片", info:"1981 · 无台词神作", color:"#F7DC6F", src:"https://player.bilibili.com/player.html?bvid=BV1GdTTzCEDD&page=1&high_quality=1&danmaku=0" },
-    { name:"九色鹿", tag:"动画短片", info:"1981 · 敦煌壁画风", color:"#48C9B0", src:"https://player.bilibili.com/player.html?bvid=BV1k7Gt6mEKV&page=1&high_quality=1&danmaku=0" },
-    { name:"猴子捞月", tag:"动画短片", info:"1981 · 剪纸动画", color:"#E59866", src:"https://player.bilibili.com/player.html?bvid=BV1697362EKr&page=1&high_quality=1&danmaku=0" },
-    { name:"如果国宝会说话", tag:"纪录片", info:"央视出品 · 25集", color:"#E67E22", src:"https://player.bilibili.com/player.html?aid=17987588&cid=30028094&high_quality=1&danmaku=0" }
+    { name:"西游记", tag:"经典剧集", info:"央视动画 · 52集全", color:"#F5B041", aid:205684454, cids:[342113036,342116630,342121354,342248434,342248972,342250139,342250629,342258131,342276519,342277812,342279580,342281462,342283588,342316603,342318887,342322273,342324852,342330304,342342912,342344735,342347192,342350250,342355488,342358301,342363655,342431454,342437171,342442163,342449107,342450879,342452580,342454525,342456627,342465101,342763161,342763627,342764166,342764608,342765077,342773352,352496719,342848002,342849576,342857337,342859434,342861206,342864536,342868718,342870408,342873802,342877256,342879594] },
+    { name:"葫芦兄弟", tag:"经典剧集", info:"13集 · 剪纸动画", color:"#58D68D", aid:2425770, cids:[3684209,3684210,3684211,3684212,3684213,3684214,3684215,3684216,3684217,3684218,3684219,3684220,3684221] },
+    { name:"黑猫警长", tag:"经典剧集", info:"5集 · 国民警长", color:"#AF7AC5", aid:2435223, cids:[3682973,3682974,3682975,3682976,3682977] },
+    { name:"舒克和贝塔", tag:"经典剧集", info:"13集 · 开飞机的小老鼠", color:"#48C9B0", aid:427941238, cids:[758658025,758657941,758658165,758658148,758657955,758658928,758659019,758659428,758659266,758659239,758661150,758659749,758659948] },
+    { name:"邋遢大王奇遇记", tag:"经典剧集", info:"13集 · 地下冒险记", color:"#EC7063", aid:427998000, cids:[758651149,758651518,758651198,758651372,758651095,758652125,758652711,758652167,758652247,758652080,758652490,758652620,758652600] },
+    { name:"阿凡提的故事", tag:"经典剧集", info:"14集 · 木偶动画", color:"#A569BD", aid:300456693, cids:[758598825,758598402,758599348,758599887,758598128,758599359,758601229,758602082,758600565,758600857,758600951,758601085,758601624,758601843] },
+    { name:"大闹天宫", tag:"动画电影", info:"1961 · 经典之作 · 112分钟", color:"#E67E22", aid:650527680, cids:[973278336] },
+    { name:"哪吒闹海", tag:"动画电影", info:"1979 · 上美经典 · 65分钟", color:"#5DADE2", aid:2434608, cids:[3684318] },
+    { name:"熊出没之夺宝熊兵", tag:"动画电影", info:"2014 · 熊出没大电影", color:"#F1948A", aid:116262013246214, cids:[36843292216] },
+    { name:"熊出没之雪岭熊风", tag:"动画电影", info:"2015 · 熊出没大电影", color:"#85C1E9", aid:115112639864506, cids:[32032884518] },
+    { name:"熊出没之狂野大陆", tag:"动画电影", info:"2021 · 熊出没大电影", color:"#7DCEA0", aid:115132873055921, cids:[32104974637] },
+    { name:"九色鹿", tag:"动画短片", info:"1981 · 敦煌壁画风", color:"#F7DC6F", aid:116617505670934, cids:[38526256787] },
+    { name:"雪孩子", tag:"动画短片", info:"1980 · 温暖催泪", color:"#E8DAEF", aid:403426087, cids:[1196671076] },
+    { name:"三个和尚", tag:"动画短片", info:"1981 · 无台词神作", color:"#F0B27A", aid:114634858173904, cids:[30347038502] },
+    { name:"猴子捞月", tag:"动画短片", info:"1981 · 剪纸动画", color:"#E59866", aid:116815560706355, cids:[39423446712] },
+    { name:"如果国宝会说话", tag:"纪录片", info:"央视出品 · 精选5集", color:"#DC7633", aid:17987588, cids:[30028094,29367088,29367093,29367096,29994951] }
   ];
 
   var PLAY_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>';
@@ -69,7 +73,7 @@
     for(var i = 0; i < MOVIES.length; i++){
       var m = MOVIES[i];
       html +=
-        '<button type="button" class="movie-card reveal" data-src="' + m.src + '" style="--movie-color:' + m.color + '">' +
+        '<button type="button" class="movie-card reveal" data-i="' + i + '" style="--movie-color:' + m.color + '">' +
           '<span class="movie-tag">' + m.tag + '</span>' +
           '<span class="movie-name">' + m.name + '</span>' +
           '<span class="movie-info">' + m.info + '</span>' +
@@ -80,16 +84,42 @@
   }
   renderMovies();
 
-  /* ---------- 播放器弹层 ---------- */
+  /* ---------- 播放器弹层（支持选集） ---------- */
   var mask = document.getElementById("player-mask");
   var iframe = document.getElementById("player-iframe");
   var ptitle = document.getElementById("player-title");
-  function openPlayer(card){
-    var src = card.getAttribute("data-src");
-    if(!src) return;
-    var nm = card.querySelector(".movie-name");
-    ptitle.textContent = nm ? nm.textContent : "";
-    iframe.src = src;
+  var epBar = document.getElementById("ep-bar");
+  var epList = document.getElementById("ep-list");
+  var curMovie = null;
+  var curEp = 0;
+
+  function buildEps(cids){
+    epList.innerHTML = "";
+    for(var i = 0; i < cids.length; i++){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "ep-btn" + (i === 0 ? " active" : "");
+      b.textContent = "第" + (i + 1) + "集";
+      b.setAttribute("data-ep", i);
+      epList.appendChild(b);
+    }
+  }
+  function setEp(m, i){
+    if(!m) return;
+    curEp = i;
+    iframe.src = "https://player.bilibili.com/player.html?aid=" + m.aid + "&cid=" + m.cids[i] + "&high_quality=1&danmaku=0";
+    var btns = epList.querySelectorAll(".ep-btn");
+    for(var j = 0; j < btns.length; j++){ btns[j].classList.toggle("active", j === i); }
+  }
+  function openPlayer(i){
+    var m = MOVIES[i];
+    if(!m) return;
+    curMovie = m;
+    ptitle.textContent = m.name;
+    var multi = m.cids && m.cids.length > 1;
+    epBar.hidden = !multi;
+    if(multi){ buildEps(m.cids); }
+    setEp(m, 0);
     mask.hidden = false;
     document.body.style.overflow = "hidden";
   }
@@ -100,7 +130,9 @@
   }
   document.addEventListener("click", function(e){
     var card = e.target.closest ? e.target.closest(".movie-card") : null;
-    if(card){ openPlayer(card); return; }
+    if(card){ openPlayer(parseInt(card.getAttribute("data-i"), 10) || 0); return; }
+    var ep = e.target.closest ? e.target.closest(".ep-btn") : null;
+    if(ep){ setEp(curMovie, parseInt(ep.getAttribute("data-ep"), 10) || 0); return; }
     if(e.target.closest && e.target.closest("#player-close")){ closePlayer(); return; }
     if(e.target === mask){ closePlayer(); }
   });

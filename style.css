@@ -421,6 +421,32 @@ footer .foot-links a:hover{color:var(--gold);}
   transition:background .2s,border-color .2s;
 }
 .player-close:hover{background:rgba(255,80,80,.25);border-color:rgba(255,80,80,.5);}
+.ep-bar{
+  padding:8px 18px;
+  background:rgba(255,255,255,.04);
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.ep-bar[hidden]{display:none;}
+.ep-list{
+  display:flex;gap:8px;overflow-x:auto;
+  padding:4px 2px 6px;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.25) transparent;
+}
+.ep-list::-webkit-scrollbar{height:5px;}
+.ep-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.25);border-radius:99px;}
+.ep-btn{
+  flex:0 0 auto;min-width:46px;
+  padding:6px 10px;border-radius:9px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.06);color:#dfe6f3;
+  font-size:12.5px;font-weight:600;cursor:pointer;
+  transition:background .2s,color .2s,border-color .2s,transform .15s;
+}
+.ep-btn:hover{background:rgba(255,255,255,.14);transform:translateY(-1px);}
+.ep-btn.active{
+  background:#f5b041;color:#141a2b;border-color:#f5b041;
+  font-weight:800;
+}
 .player-frame{position:relative;aspect-ratio:16/9;background:#000;}
 .player-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
 
