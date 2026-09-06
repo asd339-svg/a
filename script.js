@@ -29,6 +29,19 @@
     { name:"Steam",  abbr:"S",  color:"#66C0F4", desc:"PC 游戏大本营，买买买",      url:"https://store.steampowered.com" }
   ];
 
+  var TOOL_LINKS = [
+    { name:"百度网盘", abbr:"盘", color:"#3B7CFF", desc:"存文件、传资料，云端大仓库", url:"https://pan.baidu.com" },
+    { name:"WPS Office", abbr:"W", color:"#2E7CF6", desc:"文档表格演示，办公三件套", url:"https://www.wps.cn" },
+    { name:"剪映",   abbr:"剪", color:"#F24B4B", desc:"视频剪辑，模板一键成片",     url:"https://www.capcut.cn" },
+    { name:"美图秀秀", abbr:"美", color:"#FF7EB3", desc:"修图美颜，照片变好看",     url:"https://xiuxiu.meitu.com" },
+    { name:"有道翻译", abbr:"译", color:"#4A90D9", desc:"翻译词典，查单词看例句",   url:"https://fanyi.youdao.com" },
+    { name:"高德地图", abbr:"高", color:"#33A6F0", desc:"导航出行，认路找地方",     url:"https://www.amap.com" },
+    { name:"支付宝", abbr:"支", color:"#1677FF", desc:"扫码支付，收付款都用它",     url:"https://www.alipay.com" },
+    { name:"美团",   abbr:"团", color:"#FFB800", desc:"外卖团购，吃喝玩乐全有",     url:"https://www.meituan.com" },
+    { name:"网易云音乐", abbr:"音", color:"#EC4141", desc:"听歌找歌，发现好音乐",   url:"https://music.163.com" },
+    { name:"腾讯视频", abbr:"视", color:"#FF5B33", desc:"追剧看番，热门影视全在这", url:"https://v.qq.com" }
+  ];
+
   var GO_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg>';
 
   function renderLinks(containerId, list){
@@ -50,11 +63,14 @@
 
   renderLinks("social-grid", SOCIAL_LINKS);
   renderLinks("game-grid", GAME_LINKS);
+  renderLinks("tool-grid", TOOL_LINKS);
 
   var socialCount = document.getElementById("social-count");
   if(socialCount) socialCount.textContent = SOCIAL_LINKS.length + " 款";
   var gameCount = document.getElementById("game-count");
   if(gameCount) gameCount.textContent = GAME_LINKS.length + " 款";
+  var toolCount = document.getElementById("tool-count");
+  if(toolCount) toolCount.textContent = TOOL_LINKS.length + " 款";
 
   /* ---------- 星星粒子 ---------- */
   var field = document.getElementById("star-field");
