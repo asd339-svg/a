@@ -213,13 +213,19 @@
   <div class="player-box">
     <div class="player-bar">
       <span class="player-title" id="player-title"></span>
-      <button type="button" class="player-close" id="player-close" aria-label="关闭播放器">✕</button>
+      <div class="player-actions">
+        <button type="button" class="player-fs" id="player-fs" aria-label="全屏播放">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"></path><path d="M16 3h3a2 2 0 0 1 2 2v3"></path><path d="M8 21H5a2 2 0 0 1-2-2v-3"></path><path d="M16 21h3a2 2 0 0 0 2-2v-3"></path></svg>
+        </button>
+        <button type="button" class="player-close" id="player-close" aria-label="关闭播放器">✕</button>
+      </div>
     </div>
     <div class="ep-bar" id="ep-bar" hidden>
       <div class="ep-list" id="ep-list"></div>
     </div>
     <div class="player-frame">
       <iframe id="player-iframe" src="" allow="autoplay; fullscreen; encrypted-media" allowfullscreen scrolling="no" frameborder="0"></iframe>
+      <div class="player-lock" aria-hidden="true"></div>
     </div>
   </div>
 </div>

@@ -413,6 +413,16 @@ footer .foot-links a:hover{color:var(--gold);}
   background:rgba(255,255,255,.05);
 }
 .player-title{font-size:15px;font-weight:800;letter-spacing:.3px;}
+.player-actions{display:flex;align-items:center;gap:8px;}
+.player-fs{
+  width:34px;height:34px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.06);color:#fff;
+  display:inline-flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:background .2s,border-color .2s;
+}
+.player-fs svg{width:17px;height:17px;}
+.player-fs:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35);}
 .player-close{
   width:34px;height:34px;border-radius:10px;
   border:1px solid rgba(255,255,255,.16);
@@ -449,6 +459,14 @@ footer .foot-links a:hover{color:var(--gold);}
 }
 .player-frame{position:relative;aspect-ratio:16/9;background:#000;}
 .player-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+/* 覆盖播放器顶部标题/logo 区，禁止点击跳转 */
+.player-lock{
+  position:absolute;top:0;left:0;right:0;height:56px;
+  z-index:2;cursor:default;
+}
+.player-box:fullscreen{width:100vw;height:100vh;border-radius:0;}
+.player-box:fullscreen .player-frame{aspect-ratio:auto;height:100%;}
+.player-box:fullscreen .ep-list{max-width:100%;}
 
 @media (max-width:900px){
   .movie-grid{grid-template-columns:repeat(2,1fr);}
