@@ -42,6 +42,19 @@
     { name:"腾讯视频", abbr:"视", color:"#FF5B33", desc:"追剧看番，热门影视全在这", url:"https://v.qq.com" }
   ];
 
+  var VIDEO_LINKS = [
+    { name:"爱奇艺", abbr:"爱", color:"#00BE06", desc:"热播剧、院线大片全都有",   url:"https://www.iqiyi.com" },
+    { name:"优酷",   abbr:"优", color:"#00A7E1", desc:"电视剧电影综艺，追不停",   url:"https://www.youku.com" },
+    { name:"芒果TV", abbr:"芒", color:"#FF6B35", desc:"综艺王牌，剧集也好追",     url:"https://www.mgtv.com" },
+    { name:"咪咕视频", abbr:"咪", color:"#E60012", desc:"影视加体育，都好看",     url:"https://www.miguvideo.com" },
+    { name:"西瓜视频", abbr:"瓜", color:"#FF5A00", desc:"免费影视，边看边聊",     url:"https://www.ixigua.com" },
+    { name:"搜狐视频", abbr:"狐", color:"#E9B13B", desc:"经典老剧，慢慢追",       url:"https://tv.sohu.com" },
+    { name:"乐视视频", abbr:"乐", color:"#E52127", desc:"老牌影视库，怀旧好去处", url:"https://www.le.com" },
+    { name:"1905电影网", abbr:"影", color:"#8E44AD", desc:"海量老电影，免费看",   url:"https://www.1905.com" },
+    { name:"华数TV", abbr:"华", color:"#FFB800", desc:"电视直播加点播，全家看",   url:"https://www.wasu.cn" },
+    { name:"风行网", abbr:"风", color:"#00A0E9", desc:"老牌视频站，剧集不少",     url:"https://www.fun.tv" }
+  ];
+
   var GO_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg>';
 
   function renderLinks(containerId, list){
@@ -64,6 +77,7 @@
   renderLinks("social-grid", SOCIAL_LINKS);
   renderLinks("game-grid", GAME_LINKS);
   renderLinks("tool-grid", TOOL_LINKS);
+  renderLinks("video-grid", VIDEO_LINKS);
 
   var socialCount = document.getElementById("social-count");
   if(socialCount) socialCount.textContent = SOCIAL_LINKS.length + " 款";
@@ -71,6 +85,8 @@
   if(gameCount) gameCount.textContent = GAME_LINKS.length + " 款";
   var toolCount = document.getElementById("tool-count");
   if(toolCount) toolCount.textContent = TOOL_LINKS.length + " 款";
+  var videoCount = document.getElementById("video-count");
+  if(videoCount) videoCount.textContent = VIDEO_LINKS.length + " 款";
 
   /* ---------- 星星粒子 ---------- */
   var field = document.getElementById("star-field");
