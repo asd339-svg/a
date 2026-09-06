@@ -24,7 +24,6 @@
   <ul class="nav-links">
     <li><a href="#welcome">首页</a></li>
     <li><a href="#download">下载中心</a></li>
-    <li><a href="#cinema">在线影院</a></li>
     <li><a href="#inside">里面有什么</a></li>
     <li><a href="#note">寄语</a></li>
   </ul>
@@ -121,18 +120,6 @@
   </div>
 </section>
 
-<!-- ===== 在线影院 ===== -->
-<section class="section" id="cinema">
-  <div class="section-inner">
-    <div class="sec-head reveal">
-      <span class="sec-kicker">Online Cinema</span>
-      <h2>在线影院</h2>
-      <p>经典动画、剧集和纪录片，点开就能在站内直接看，不用跳走。片单会不断添加。</p>
-    </div>
-    <div class="movie-grid" id="movie-grid"></div>
-  </div>
-</section>
-
 <!-- ===== 里面有什么 ===== -->
 <section class="section" id="inside">
   <div class="section-inner">
@@ -201,34 +188,11 @@
   <ul class="foot-links">
     <li><a href="#welcome">首页</a></li>
     <li><a href="#download">下载中心</a></li>
-    <li><a href="#cinema">在线影院</a></li>
     <li><a href="#inside">里面有什么</a></li>
     <li><a href="#note">寄语</a></li>
   </ul>
   <p>© 2026 我的小站 · 欢迎光临</p>
 </footer>
-
-<!-- ===== 播放器弹层 ===== -->
-<div class="player-mask" id="player-mask" hidden>
-  <div class="player-box">
-    <div class="player-bar">
-      <span class="player-title" id="player-title"></span>
-      <div class="player-actions">
-        <button type="button" class="player-fs" id="player-fs" aria-label="全屏播放">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"></path><path d="M16 3h3a2 2 0 0 1 2 2v3"></path><path d="M8 21H5a2 2 0 0 1-2-2v-3"></path><path d="M16 21h3a2 2 0 0 0 2-2v-3"></path></svg>
-        </button>
-        <button type="button" class="player-close" id="player-close" aria-label="关闭播放器">✕</button>
-      </div>
-    </div>
-    <div class="ep-bar" id="ep-bar" hidden>
-      <div class="ep-list" id="ep-list"></div>
-    </div>
-    <div class="player-frame">
-      <iframe id="player-iframe" src="" allow="autoplay; fullscreen; encrypted-media" allowfullscreen scrolling="no" frameborder="0"></iframe>
-      <div class="player-lock" aria-hidden="true"></div>
-    </div>
-  </div>
-</div>
 
 <script src="script.js"></script>
 </body>
